@@ -9,10 +9,6 @@ echo "Starting dependency installation..."
 echo "Updating package list..."
 sudo apt update
 
-# Check udev status (allow failure)
-echo "Checking udev status..."
-systemctl status udev || echo "udev status check completed"
-
 # Install and configure systemd
 echo "Installing systemd..."
 sudo apt install -y systemd systemd-sysv
@@ -58,6 +54,16 @@ if ! grep -q "$PYTHON_USER_BIN" ~/.bashrc; then
 else
     echo "Python user bin already in PATH"
 fi
+
+# # Add the OSRF package signing key
+# wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+
+# # Add Gazebo package repository for Ubuntu 22.04 (jammy)
+# echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable jammy main" | \
+#   sudo tee /etc/apt/sources.list.d/gazebo-stable.list
+
+sudo apt update
+sudo apt install ros-humble-ros-gz-sim
 
 echo "All dependencies installed successfully!"
 echo "Note: Run 'source ~/.bashrc' or restart your terminal to update PATH"sudo apt update

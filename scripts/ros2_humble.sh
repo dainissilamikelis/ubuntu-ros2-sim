@@ -3,7 +3,7 @@
 # Exit on any error and enable verbose output
 set -e
 
-echo "Installing base ROS2..."
+echo "Installing base ROSsource install/setup.bash2..."
 
 # Get the latest ROS APT source version
 echo "Fetching latest ROS APT source version..."

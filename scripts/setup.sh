@@ -1,4 +1,4 @@
-#! /bin/sh 
+#! /bin/bash 
 # maybe setup different mirror that LV ?
 
 # this is likely optional
@@ -15,7 +15,7 @@ echo "Installing ROS2 Done"
 echo "Installing ROS2 Humble done"
 
 echo "Installing arduPilot"
-../scripts/ardupilot.sh
+ ../scripts/ardupilot.sh
 echo "Installing ArduPilot done"
 
 echo "Setting up ROS2 environment"
@@ -26,9 +26,7 @@ echo "Setting up arduPilot with ROS2"
 ../scripts/ardu_ros2.sh
 echo "Setting up ArduPilot with ROS2 done"
 
-echo "Setting up MavProxy"
-../scripts/mavproxy.sh
-echo "Setting up MavProxy done"
+
 
 echo "Setting up GAZEBO"
 ../scripts/gazebo.sh
@@ -38,3 +36,5 @@ echo "Setting up GAZEBO done"
 ## Run stuff
 source install/setup.bash
 ros2 launch ardupilot_gz_bringup iris_runway.launch.py
+
+ros2 launch ardupilot_gz_bringup iris_mini.launch.py
