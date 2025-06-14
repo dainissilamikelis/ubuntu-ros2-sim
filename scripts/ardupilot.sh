@@ -12,15 +12,15 @@ if [ -d "ardupilot" ]; then
 fi
 
 echo "Cloning ArduPilot repository..."
-git clone --recursive https://github.com/ArduPilot/ardupilot.git
+git clone --recurse-submodules https://github.com/ArduPilot/ardupilot.git
 
 echo "Entering ArduPilot directory..."
 cd ardupilot
 
 # Temp fix for specific pull request
-echo "Applying temporary fix for specific pull request..."
-git fetch origin pull/29850/head:pr-29850
-git checkout 3c190762278d3db6013872bf61defbb81aa25693
+# echo "Applying temporary fix for specific pull request..."
+# git fetch origin pull/29850/head:pr-29850
+# git checkout 3c190762278d3db6013872bf61defbb81aa25693
 
 echo "Installing ArduPilot prerequisites..."
 Tools/environment_install/install-prereqs-ubuntu.sh -y
@@ -34,4 +34,4 @@ echo "Building SITL copter..."
 
 echo "ArduPilot SITL copter build complete!"
 echo "You can now run the simulator from the ardupilot directory"
-
+# https://ardupilot.org/dev/docs/building-setup-linux.html
