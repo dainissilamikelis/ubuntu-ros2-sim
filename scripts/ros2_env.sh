@@ -1,5 +1,5 @@
-ARDU_DIR=./ardu_ws
-ARDU_SOURCE=./ardu_ws/src
+ARDU_DIR=./ardupilot
+ARDU_SOURCE=./ardupilot/src
 
 echo "Installing additional ardu pilot dependencies"
 mkdir -p $ARDU_SOURCE
